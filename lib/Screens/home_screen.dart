@@ -99,15 +99,19 @@ class HomeScreen extends StatelessWidget {
               childCard: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
+                  SizedBox(
+                    width: 20,
+                  ),
                   BounceInLeft(
                     child: Text(
                       '1. Growing\n plants from\n seeds',
                       style: kcard_text,
                     ),
                   ),
-                  Image(
-                    image: AssetImage('images/Layer-3.gif'),
-                    height: 100,
+                  Expanded(
+                    child: Image(
+                      image: AssetImage('images/Layer-3.gif'),
+                    ),
                   )
                 ],
               ),
