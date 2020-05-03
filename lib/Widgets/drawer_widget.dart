@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,11 +27,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Text(
             'HOME',
-            style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 20,
-                fontFamily: 'FrostBiteNarrow',
-                color: Colors.white),
+            style: kdrawer_widget,
           ),
           SizedBox(
             height: 10,
@@ -43,11 +41,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Text(
             'ABOUT US',
-            style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 20,
-                fontFamily: 'FrostBiteNarrow',
-                color: Colors.white),
+            style: kdrawer_widget,
           ),
           SizedBox(
             height: 10,
@@ -61,11 +55,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Text(
             'CONTACT US',
-            style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 20,
-                fontFamily: 'FrostBiteNarrow',
-                color: Colors.white),
+            style: kdrawer_widget,
           ),
           SizedBox(
             height: 10,

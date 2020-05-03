@@ -4,6 +4,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:turing/Widgets/drawer_widget.dart';
 
+import '../constants.dart';
+
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
@@ -53,16 +55,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                   TyperAnimatedTextKit(
                     text: ['VIRTUAL\nLABS'],
-                    textStyle: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 35,
-                        fontFamily: 'FrostBiteNarrow'),
+                    textStyle: kvirtual_lab,
                     speed: Duration(milliseconds: 200),
                     isRepeatingAnimation: false,
                   ),
                   Image(
                     image: AssetImage('images/lab.gif'),
-                    width: 200,
+                    width: 180,
                   ),
                 ],
               ),
@@ -102,10 +101,7 @@ class HomeScreen extends StatelessWidget {
                   BounceInLeft(
                     child: Text(
                       '1. Growing\n plants from\n seeds',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 28,
-                          fontFamily: 'DustismoBold'),
+                      style: kcard_text,
                     ),
                   ),
                   Image(
