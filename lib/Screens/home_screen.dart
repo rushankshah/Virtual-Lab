@@ -49,9 +49,6 @@ class HomeScreen extends StatelessWidget {
               childCard: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  SizedBox(
-                    width: 10,
-                  ),
                   TyperAnimatedTextKit(
                     text: ['VIRTUAL\nLABS'],
                     textStyle: kvirtual_lab,
