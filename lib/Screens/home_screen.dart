@@ -3,7 +3,6 @@ import 'package:turing/Widgets/cards.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:turing/Widgets/drawer_widget.dart';
-
 import '../constants.dart';
 
 class HomeScreen extends StatelessWidget {
