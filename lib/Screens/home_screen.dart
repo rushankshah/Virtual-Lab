@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/cards.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -49,15 +50,19 @@ class HomeScreen extends StatelessWidget {
               childCard: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  SizedBox(
+                    width: 10,
+                  ),
                   TyperAnimatedTextKit(
                     text: ['VIRTUAL\nLABS'],
                     textStyle: kvirtual_lab,
                     speed: Duration(milliseconds: 200),
                     isRepeatingAnimation: false,
                   ),
-                  Image(
-                    image: AssetImage('images/lab.gif'),
-                    width: 180,
+                  Expanded(
+                    child: Image(
+                      image: AssetImage('images/lab.gif'),
+                    ),
                   ),
                 ],
               ),
