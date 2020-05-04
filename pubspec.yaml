@@ -51,6 +51,8 @@ flutter:
     - images/VLLOGOWHITETEXT.png
     - images/Layer-3.gif
     - images/lab.gif
+    - images/material.png
+    - images/plant.png
   fonts:
     - family: DustismoRomanBold
       fonts:

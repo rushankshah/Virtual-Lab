@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 6,
             child: Cards(
-              colour: Color(0xFFfcabc2),
+              colour: Color(0xFFffbed1),
               childCard: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -60,8 +60,10 @@ class HomeScreen extends StatelessWidget {
                     isRepeatingAnimation: false,
                   ),
                   Expanded(
-                    child: Image(
-                      image: AssetImage('images/lab.gif'),
+                    child: Roulette(
+                      child: Image(
+                        image: AssetImage('images/lab.gif'),
+                      ),
                     ),
                   ),
                 ],
@@ -95,7 +97,7 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 5,
             child: Cards(
-              colour: Color(0xFF95aedd),
+              colour: Color(0xFFbdd4ff),
               childCard: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -109,8 +111,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: Image(
-                      image: AssetImage('images/Layer-3.gif'),
+                    child: BounceInRight(
+                      child: Image(
+                        image: AssetImage('images/Layer-3.gif'),
+                      ),
                     ),
                   )
                 ],
@@ -123,8 +127,28 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 5,
             child: Cards(
-              colour: Color(0xFF90bdac),
-              childCard: Container(),
+              colour: Color(0xFFa5ffec),
+              childCard: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    width: 20,
+                  ),
+                  BounceInLeft(
+                    child: Text(
+                      '2. Materials',
+                      style: kcard_text,
+                    ),
+                  ),
+                  Expanded(
+                    child: BounceInRight(
+                      child: Image(
+                        image: AssetImage('images/material.png'),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           SizedBox(
@@ -134,7 +158,27 @@ class HomeScreen extends StatelessWidget {
             flex: 5,
             child: Cards(
               colour: Color(0xFFffff99),
-              childCard: Container(),
+              childCard: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  SizedBox(
+                    width: 20,
+                  ),
+                  BounceInLeft(
+                    child: Text(
+                      '3. The World\nof Living',
+                      style: kcard_text,
+                    ),
+                  ),
+                  Expanded(
+                    child: BounceInRight(
+                      child: Image(
+                        image: AssetImage('images/plant.png'),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ],
