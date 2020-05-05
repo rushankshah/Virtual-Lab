@@ -143,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: BounceInRight(
                       child: Image(
-                        image: AssetImage('images/material.png'),
+                        image: AssetImage('images/yarn.gif'),
                       ),
                     ),
                   )
@@ -173,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: BounceInRight(
                       child: Image(
-                        image: AssetImage('images/plant.png'),
+                        image: AssetImage('images/plastic.gif'),
                       ),
                     ),
                   )

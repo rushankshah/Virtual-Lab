@@ -43,16 +43,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - images/logo.png
-    - images/VLLab.png
-    - images/pngplant.png
-    - images/drawerLogo.png
-    - images/VLLOGOwhite.png
-    - images/VLLOGOWHITETEXT.png
-    - images/Layer-3.gif
-    - images/lab.gif
-    - images/material.png
-    - images/plant.png
+    - images/
   fonts:
     - family: DustismoRomanBold
       fonts:
