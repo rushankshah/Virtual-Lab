@@ -10,7 +10,7 @@ class CardChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('$text');
+    //print('$text');
     //print('$img');
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
