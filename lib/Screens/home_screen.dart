@@ -104,7 +104,7 @@ class HomeScreen extends StatelessWidget {
                 text: '1. Growing \n plants from \n seeds',
                 wid: BounceInRight(
                   child: FlareActor(
-                    'images/Plant New.flr',
+                    'images/Plant new 3.flr',
                     //fit: BoxFit.contain,
                     animation: "plant",
                   ),

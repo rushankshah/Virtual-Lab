@@ -45,7 +45,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/
-    - images/Plant New.flr
+    - images/Plant new 3.flr
   fonts:
     - family: DustismoRomanBold
       fonts:
