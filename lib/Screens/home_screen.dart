@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:turing/Widgets/card_child.dart';
 import 'package:turing/Widgets/cards.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:turing/Widgets/drawer_widget.dart';
 import '../constants.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -98,26 +100,13 @@ class HomeScreen extends StatelessWidget {
             flex: 5,
             child: Cards(
               colour: Color(0xFFbdd4ff),
-              childCard: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  SizedBox(
-                    width: 20,
+              childCard: CardChild(
+                text: '1. Growing\n plants from\n seeds',
+                wid: BounceInRight(
+                  child: Image(
+                    image: AssetImage('images/Layer-3.gif'),
                   ),
-                  BounceInLeft(
-                    child: Text(
-                      '1. Growing\n plants from\n seeds',
-                      style: kcard_text,
-                    ),
-                  ),
-                  Expanded(
-                    child: BounceInRight(
-                      child: Image(
-                        image: AssetImage('images/Layer-3.gif'),
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
             ),
           ),
@@ -128,26 +117,13 @@ class HomeScreen extends StatelessWidget {
             flex: 5,
             child: Cards(
               colour: Color(0xFFa5ffec),
-              childCard: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  SizedBox(
-                    width: 20,
+              childCard: CardChild(
+                text: '2. Materials',
+                wid: BounceInRight(
+                  child: Image(
+                    image: AssetImage('images/yarn.gif'),
                   ),
-                  BounceInLeft(
-                    child: Text(
-                      '2. Materials',
-                      style: kcard_text,
-                    ),
-                  ),
-                  Expanded(
-                    child: BounceInRight(
-                      child: Image(
-                        image: AssetImage('images/yarn.gif'),
-                      ),
-                    ),
-                  )
-                ],
+                ),
               ),
             ),
           ),
@@ -157,29 +133,15 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 5,
             child: Cards(
-              colour: Color(0xFFffff99),
-              childCard: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  SizedBox(
-                    width: 20,
+                colour: Color(0xFFffff99),
+                childCard: CardChild(
+                  text: '3. The World\nof Living',
+                  wid: FlareActor(
+                    'images/first.flr',
+                    //fit: BoxFit.contain,
+                    animation: "Build and Fade Out",
                   ),
-                  BounceInLeft(
-                    child: Text(
-                      '3. The World\nof Living',
-                      style: kcard_text,
-                    ),
-                  ),
-                  Expanded(
-                    child: BounceInRight(
-                      child: Image(
-                        image: AssetImage('images/plastic.gif'),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
+                )),
           )
         ],
       ),
