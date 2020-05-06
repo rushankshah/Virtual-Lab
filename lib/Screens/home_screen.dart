@@ -101,10 +101,12 @@ class HomeScreen extends StatelessWidget {
             child: Cards(
               colour: Color(0xFFbdd4ff),
               childCard: CardChild(
-                text: '1. Growing\n plants from\n seeds',
+                text: '1. Growing \n plants from \n seeds',
                 wid: BounceInRight(
-                  child: Image(
-                    image: AssetImage('images/Layer-3.gif'),
+                  child: FlareActor(
+                    'images/first.flr',
+                    //fit: BoxFit.contain,
+                    animation: "Untitled",
                   ),
                 ),
               ),
@@ -133,15 +135,16 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 5,
             child: Cards(
-                colour: Color(0xFFffff99),
-                childCard: CardChild(
-                  text: '3. The World\nof Living',
-                  wid: FlareActor(
-                    'images/first.flr',
-                    //fit: BoxFit.contain,
-                    animation: "Build and Fade Out",
+              colour: Color(0xFFffff99),
+              childCard: CardChild(
+                text: '3. The World\n of Living',
+                wid: BounceInRight(
+                  child: Image(
+                    image: AssetImage('images/plastic.gif'),
                   ),
-                )),
+                ),
+              ),
+            ),
           )
         ],
       ),

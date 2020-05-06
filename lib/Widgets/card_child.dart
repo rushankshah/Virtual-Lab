@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class CardChild extends StatelessWidget {
-  String text;
+  final String text;
   //String img;
-  Widget wid;
+  final Widget wid;
   CardChild({this.text, this.wid});
 
   @override
