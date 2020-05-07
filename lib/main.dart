@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:turing/Screens/home_screen.dart';
+import 'package:turing/Screens/loading_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(backgroundColor: Colors.white),
-      home: HomeScreen(),
+      home: LoadingScreen(),
+      routes: {'/home': (BuildContext context) => HomeScreen()},
     );
   }
 }

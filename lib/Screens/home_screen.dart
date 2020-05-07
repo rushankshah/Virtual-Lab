@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                     isRepeatingAnimation: false,
                   ),
                   Expanded(
-                    child: Roulette(
+                    child: Bounce(
                       child: Image(
                         image: AssetImage('images/lab.gif'),
                       ),
