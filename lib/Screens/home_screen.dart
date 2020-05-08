@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: Bounce(
                       child: FlareActor(
-                        'images/lab.flr',
+                        'images/ lab (1).flr', 
                         animation: 'lab',
                         fit: BoxFit.cover,
                       ),
@@ -147,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                 text: '3. The World\n of Living',
                 wid: BounceInRight(
                   child: FlareActor(
-                    'images/exp3.flr',
+                    'images/exp3 (1).flr',
                     animation: 'dewdrop',
                   ),
                 ),
