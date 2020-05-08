@@ -26,7 +26,7 @@ class LoadingScreen extends StatelessWidget {
                 size: 50,
               ),
               onTap: () {
-                Navigator.pushReplacementNamed(context, '/home');
+                Navigator.pushReplacementNamed(context, '/');
               },
             ),  
             Text(

@@ -98,18 +98,23 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             flex: 5,
-            child: Cards(
-              colour: Color(0xFFbdd4ff),
-              childCard: CardChild(
-                text: '1. Growing \n plants from \n seeds',
-                wid: BounceInRight(
-                  child: FlareActor(
-                    'images/Plant new 3.flr',
-                    //fit: BoxFit.contain,
-                    animation: "plant",
+            child: GestureDetector(
+              child: Cards(
+                colour: Color(0xFFbdd4ff),
+                childCard: CardChild(
+                  text: '1. Growing \n plants from \n seeds',
+                  wid: BounceInRight(
+                    child: FlareActor(
+                      'images/Plant new 3.flr',
+                      //fit: BoxFit.contain,
+                      animation: "plant",
+                    ),
                   ),
                 ),
               ),
+              onTap: () {
+                Navigator.pushNamed(context, '/growingplants');
+              },
             ),
           ),
           SizedBox(

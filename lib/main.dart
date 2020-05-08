@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:turing/Screens/growing_plants.dart';
 import 'package:turing/Screens/home_screen.dart';
 import 'package:turing/Screens/loading_screen.dart';
 
@@ -13,8 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(backgroundColor: Colors.white),
-      home: LoadingScreen(),
-      routes: {'/home': (BuildContext context) => HomeScreen()},
+      initialRoute: '/loading',
+      routes: {
+        '/': (BuildContext context) => HomeScreen(),
+        '/growingplants': (BuildContext context) => GrowingPlants(),
+        '/loading': (BuildContext context) => LoadingScreen(),
+      },
     );
   }
 }
