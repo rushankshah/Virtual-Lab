@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
             child: Cards(
               colour: Color(0xFFffbed1),
               childCard: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   SizedBox(
                     width: 10,
@@ -63,8 +63,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: Bounce(
-                      child: Image(
-                        image: AssetImage('images/lab.gif'),
+                      child: FlareActor(
+                        'images/lab.flr',
+                        animation: 'lab',
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -144,8 +146,9 @@ class HomeScreen extends StatelessWidget {
               childCard: CardChild(
                 text: '3. The World\n of Living',
                 wid: BounceInRight(
-                  child: Image(
-                    image: AssetImage('images/plastic.gif'),
+                  child: FlareActor(
+                    'images/exp3.flr',
+                    animation: 'dewdrop',
                   ),
                 ),
               ),
