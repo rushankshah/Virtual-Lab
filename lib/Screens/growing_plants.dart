@@ -5,7 +5,6 @@ import 'package:turing/Widgets/card_child.dart';
 import 'package:turing/Widgets/cards.dart';
 import 'package:turing/Widgets/drawer_widget.dart';
 import 'package:expandable/expandable.dart';
-import '../constants.dart';
 
 class GrowingPlants extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -89,8 +88,12 @@ class GrowingPlants extends StatelessWidget {
             //   // hasIcon: true,
             // ),
             Container(
-              color: Colors.lightBlueAccent,
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
               padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.lightBlueAccent,
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: ExpandableNotifier(
                 // <-- Provides ExpandableController to its children
                 child: Column(
@@ -99,14 +102,19 @@ class GrowingPlants extends StatelessWidget {
                       // <-- Driven by ExpandableController from ExpandableNotifier
                       collapsed: ExpandableButton(
                         // <-- Expands when tapped on the cover photo
-                        child: Image.asset('images/drawerLogo.png'),
-                        
+                        child: Card(
+                          child: ListTile(
+                            leading: Image.asset('images/drawerLogo.png'),
+                            title: Text('EXPERIMENT 1'),
+                          ),
+                        ),
                       ),
                       expanded: Column(children: [
                         //buildAllPhotos(),
                         ExpandableButton(
                           // <-- Collapses when tapped on
-                          child: Text("Back ExpandablePanel has a number of properties to customize its behavior, but it's restricted by having a title at the top and an expand icon shown as a down arrow (on the right or on the left). If that's not enough, you can implement custom expandable widgets by using a combination of Expandable, ExpandableNotifier, and ExpandableButton"),
+                          child: Text(
+                              "Back ExpandablePanel has a number of properties to customize its behavior, but it's restricted by having a title at the top and an expand icon shown as a down arrow (on the right or on the left). If that's not enough, you can implement custom expandable widgets by using a combination of Expandable, ExpandableNotifier, and ExpandableButton"),
                         ),
                       ]),
                     ),
@@ -114,7 +122,7 @@ class GrowingPlants extends StatelessWidget {
                 ),
               ),
             ),
-            ///
+
             Container(
               color: Colors.pinkAccent,
               padding: EdgeInsets.all(15),
@@ -126,14 +134,15 @@ class GrowingPlants extends StatelessWidget {
                       // <-- Driven by ExpandableController from ExpandableNotifier
                       collapsed: ExpandableButton(
                         // <-- Expands when tapped on the cover photo
-                        child: Text('EXP 2  if you show a list of articles with a summary of each article, and the user expands an article to read it, they expect the expanded article to occupy as much screen space as possible. The Expandable package contains a wid '),
-                        
+                        child: Text(
+                            'EXP 2  if you show a list of articles with a summary of each article, and the user expands an article to read it, they expect the expanded article to occupy as much screen space as possible. The Expandable package contains a wid '),
                       ),
                       expanded: Column(children: [
                         //buildAllPhotos(),
                         ExpandableButton(
                           // <-- Collapses when tapped on
-                          child: Text("Back ExpandablePanel has a number of properties to customize its behavior, but it's restricted by having a title at the top and an expand icon shown as a down arrow (on the right or on the left). If that's not enough, you can implement custom expandable widgets by using a combination of Expandable, ExpandableNotifier, and ExpandableButton"),
+                          child: Text(
+                              "Back ExpandablePanel has a number of properties to customize its behavior, but it's restricted by having a title at the top and an expand icon shown as a down arrow (on the right or on the left). If that's not enough, you can implement custom expandable widgets by using a combination of Expandable, ExpandableNotifier, and ExpandableButton"),
                         ),
                       ]),
                     ),
