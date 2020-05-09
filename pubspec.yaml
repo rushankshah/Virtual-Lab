@@ -47,8 +47,9 @@ flutter:
   assets:
     - images/
     - images/Loading.flr
-    - images/lab (1).flr
+    - images/Lab Final.flr
     - images/exp3 (1).flr
+    - images/Material.flr
   fonts:
     - family: DustismoRomanBold
       fonts:

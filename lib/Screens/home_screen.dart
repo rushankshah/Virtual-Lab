@@ -62,9 +62,9 @@ class HomeScreen extends StatelessWidget {
                     isRepeatingAnimation: false,
                   ),
                   Expanded(
-                    child: Bounce(
+                    child: BounceInRight(
                       child: FlareActor(
-                        'images/lab (1).flr',
+                        'images/Lab Final.flr',
                         animation: 'lab',
                         fit: BoxFit.cover,
                       ),
@@ -129,8 +129,10 @@ class HomeScreen extends StatelessWidget {
               childCard: CardChild(
                 text: '2. Materials',
                 wid: BounceInRight(
-                  child: Image(
-                    image: AssetImage('images/yarn.gif'),
+                  child: FlareActor(
+                    'images/Material.flr',
+                    //fit: BoxFit.contain,
+                    animation: "Untitled",
                   ),
                 ),
               ),
