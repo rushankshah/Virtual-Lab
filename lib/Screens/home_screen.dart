@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: Bounce(
                       child: FlareActor(
-                        'images/ lab (1).flr', 
+                        'images/lab (1).flr',
                         animation: 'lab',
                         fit: BoxFit.cover,
                       ),
