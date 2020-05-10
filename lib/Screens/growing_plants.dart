@@ -3,7 +3,6 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/card_child.dart';
 import 'package:turing/Widgets/cards.dart';
-import 'package:expandable/expandable.dart';
 
 class GrowingPlants extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -86,67 +85,63 @@ class GrowingPlants extends StatelessWidget {
             //   // tapHeaderToExpand: true,
             //   // hasIcon: true,
             // ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ExpandableNotifier(
-                // <-- Provides ExpandableController to its children
-                child: Column(
-                  children: [
-                    Expandable(
-                      // <-- Driven by ExpandableController from ExpandableNotifier
-                      collapsed: ExpandableButton(
-                        // <-- Expands when tapped on the cover photo
-                        child: Card(
-                          child: ListTile(
-                            leading: Image.asset('images/drawerLogo.png'),
-                            title: Text('EXPERIMENT 1'),
-                          ),
-                        ),
-                      ),
-                      expanded: Column(children: [
-                        //buildAllPhotos(),
-                        ExpandableButton(
-                          // <-- Collapses when tapped on
-                          child: Text(
-                              "Back ExpandablePanel has a number of properties to customize its behavior, but it's restricted by having a title at the top and an expand icon shown as a down arrow (on the right or on the left). If that's not enough, you can implement custom expandable widgets by using a combination of Expandable, ExpandableNotifier, and ExpandableButton"),
-                        ),
-                      ]),
+
+            Expanded(
+              flex: 1,
+              child: Container(
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                  child: Text(
+                    'Experiment 1',
+                    style: TextStyle(
+                      fontSize: 30,
                     ),
-                  ],
+                  ),
                 ),
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color(0xFFffff99)),
               ),
             ),
-
-            Container(
-              color: Colors.pinkAccent,
-              padding: EdgeInsets.all(15),
-              child: ExpandableNotifier(
-                // <-- Provides ExpandableController to its children
-                child: Column(
-                  children: [
-                    Expandable(
-                      // <-- Driven by ExpandableController from ExpandableNotifier
-                      collapsed: ExpandableButton(
-                        // <-- Expands when tapped on the cover photo
-                        child: Text(
-                            'EXP 2  if you show a list of articles with a summary of each article, and the user expands an article to read it, they expect the expanded article to occupy as much screen space as possible. The Expandable package contains a wid '),
-                      ),
-                      expanded: Column(children: [
-                        //buildAllPhotos(),
-                        ExpandableButton(
-                          // <-- Collapses when tapped on
-                          child: Text(
-                              "Back ExpandablePanel has a number of properties to customize its behavior, but it's restricted by having a title at the top and an expand icon shown as a down arrow (on the right or on the left). If that's not enough, you can implement custom expandable widgets by using a combination of Expandable, ExpandableNotifier, and ExpandableButton"),
-                        ),
-                      ]),
+            Expanded(
+              flex: 1,
+              child: Container(
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                  child: Text(
+                    'Experiment 2',
+                    style: TextStyle(
+                      fontSize: 30,
                     ),
-                  ],
+                  ),
                 ),
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color(0xFFffbed1),
+              ),
+            ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                  child: Text(
+                    'Experiment 3',
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color(0xFFa5ffec)),
               ),
             ),
           ],
