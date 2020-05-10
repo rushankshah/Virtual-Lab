@@ -3,7 +3,6 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/card_child.dart';
 import 'package:turing/Widgets/cards.dart';
-import 'package:turing/Widgets/drawer_widget.dart';
 import 'package:expandable/expandable.dart';
 
 class GrowingPlants extends StatelessWidget {
@@ -19,10 +18,10 @@ class GrowingPlants extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            _scaffoldKey.currentState.openDrawer();
+            Navigator.pop(context);
           },
           icon: Icon(
-            Icons.dashboard,
+            Icons.keyboard_arrow_left,
             color: Colors.black,
             size: 40,
           ),
@@ -32,12 +31,12 @@ class GrowingPlants extends StatelessWidget {
           image: AssetImage('images/logo.png'),
         ),
       ),
-      drawer: Drawer(
-        child: Container(
-          color: Color(0xFF666666),
-          child: DrawerWidget(),
-        ),
-      ),
+      // drawer: Drawer(
+      //   child: Container(
+      //     color: Color(0xFF666666),
+      //     child: DrawerWidget(),
+      //   ),
+      // ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
