@@ -61,8 +61,9 @@ class GrowingPlants extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(
-              flex: 5,
+            Container(
+              height: 140,
+              width: double.infinity,
               child: Cards(
                 colour: Color(0xFFbdd4ff),
                 childCard: CardChild(
@@ -77,72 +78,133 @@ class GrowingPlants extends StatelessWidget {
                 ),
               ),
             ),
-            //
-            //         ExpandablePanel(
-            //   header: Text('TITLE'),
-            //   collapsed: Text('BODY', softWrap: true, maxLines: 2, overflow: TextOverflow.ellipsis,),
-            //   expanded: Text('EXPANDED BODY', softWrap: true, ),
-            //   // tapHeaderToExpand: true,
-            //   // hasIcon: true,
-            // ),
+            
 
-            Expanded(
-              flex: 1,
-              child: Container(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                  child: Text(
-                    'Experiment 1',
-                    style: TextStyle(
-                      fontSize: 30,
+            Container(
+              height:380 ,
+              width: double.infinity,
+                          child: ListView(children: [
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 1',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
                     ),
                   ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFffff99)),
                 ),
-                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color(0xFFffff99)),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                  child: Text(
-                    'Experiment 2',
-                    style: TextStyle(
-                      fontSize: 30,
+                Container(
+                  width: double.infinity,
+                  height: 45,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 2',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
                     ),
                   ),
-                ),
-                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                decoration: BoxDecoration(
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Color(0xFFffbed1),
-              ),
-            ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                  child: Text(
-                    'Experiment 3',
-                    style: TextStyle(
-                      fontSize: 30,
-                    ),
                   ),
                 ),
-                margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color(0xFFa5ffec)),
-              ),
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 3',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFa5ffec)),
+                ),
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 4',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFa5ffec)),
+                ),
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 5',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFa5ffec)),
+                ),
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 6',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFa5ffec)),
+                ),
+                Container(
+                  height: 45,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      'Experiment 7',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFa5ffec)),
+                ),
+              ]),
             ),
           ],
         ),
