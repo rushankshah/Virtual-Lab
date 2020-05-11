@@ -78,12 +78,10 @@ class GrowingPlants extends StatelessWidget {
                 ),
               ),
             ),
-            
-
             Container(
-              height:380 ,
+              height: 380,
               width: double.infinity,
-                          child: ListView(children: [
+              child: ListView(children: [
                 Container(
                   height: 45,
                   width: double.infinity,
@@ -151,7 +149,7 @@ class GrowingPlants extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFFa5ffec)),
+                      color: Color(0xFFffbed1)),
                 ),
                 Container(
                   height: 45,
