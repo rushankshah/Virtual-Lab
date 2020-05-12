@@ -132,7 +132,7 @@ class HomeScreen extends StatelessWidget {
                   child: FlareActor(
                     'images/Material.flr',
                     //fit: BoxFit.contain,
-                    animation: "Untitled",
+                    animation: "Material",
                   ),
                 ),
               ),
