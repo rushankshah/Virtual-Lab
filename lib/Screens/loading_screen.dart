@@ -28,7 +28,7 @@ class LoadingScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushReplacementNamed(context, '/');
               },
-            ),  
+            ),
             Text(
               'Get Started',
               style: TextStyle(
