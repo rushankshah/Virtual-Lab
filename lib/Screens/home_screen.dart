@@ -5,6 +5,7 @@ import 'package:turing/Widgets/cards.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:turing/Widgets/drawer_widget.dart';
+import 'package:turing/Widgets/std_details.dart';
 import '../constants.dart';
 import 'package:flare_flutter/flare_actor.dart';
 
@@ -13,7 +14,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double padd = (MediaQuery.of(context).size.width * 0.01);
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -36,6 +36,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       drawer: Drawer(
+        key: _scaffoldKey,
         child: Container(
           color: Color(0xFF666666),
           child: DrawerWidget(),
@@ -82,46 +83,16 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           //end of first
+          StdDetails('Standard VII'),
         ],
       ),
     );
   }
 }
 
-class Entry {
-  Entry(this.title, [this.children = const <Entry>[]]);
 
-  final String title;
-  final List<Entry> children;
-}
 
-final List<Entry> data = <Entry>[
-  Entry(
-    'Standard VII',
-    <Entry>[
-      Entry(
-        'Section A0',
-        <Entry>[
-          Entry('Item A0.1'),
-          Entry('Item A0.2'),
-          Entry('Item A0.3'),
-        ],
-      ),
-      Entry('Section A1'),
-      Entry('Section A2'),
-    ],
-  ),
-];
 
-class EntryItem extends StatelessWidget {
-  final Entry entry;
-
-  EntryItem(this.entry);
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
 
 // Container(
 //   height:,
@@ -139,23 +110,7 @@ class EntryItem extends StatelessWidget {
 // ),
 // Container(
 
-//   child: GestureDetector(
-//     child: Cards(
-//       colour: Color(0xFFbdd4ff),
-//       childCard: CardChild(
-//         text: '1. Growing \n plants from \n seeds',
-//         wid: BounceInRight(
-//           child: FlareActor(
-//             'images/Plant new 3.flr',
-//             animation: "plant",
-//           ),
-//         ),
-//       ),
-//     ),
-//     onTap: () {
-//       Navigator.pushNamed(context, '/growingplants');
-//     },
-//   ),
+//   child: 
 // ),
 
 //////
