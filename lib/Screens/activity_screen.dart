@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:turing/Widgets/card_child.dart';
 import 'package:turing/Widgets/cards.dart';
 
-class GrowingPlants extends StatelessWidget {
+class ActivityScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -78,20 +78,25 @@ class GrowingPlants extends StatelessWidget {
             Container(
               width: double.infinity,
               child: Column(children: [
-                Container(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                    child: Text(
-                      '1. Germinate seeds to observe how plants grow from seeds.',
-                      style: TextStyle(
-                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
+                GestureDetector(
+                  child: Container(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                      child: Text(
+                        '1. Germinate seeds to observe how plants grow from seeds.',
+                        style: TextStyle(
+                            fontSize: 25, fontFamily: 'DustismoRomanBold'),
+                      ),
                     ),
+                    margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Color(0xFFffbed1)),
                   ),
-                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFFffbed1)),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/activityDetail');
+                  },
                 ),
                 Container(
                   margin: EdgeInsets.fromLTRB(10, 10, 10, 10),

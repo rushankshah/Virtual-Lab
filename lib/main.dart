@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:turing/Screens/growing_plants.dart';
+import 'package:turing/Screens/activity_detail.dart';
+import 'package:turing/Screens/activity_screen.dart';
 import 'package:turing/Screens/home_screen.dart';
 import 'package:turing/Screens/loading_screen.dart';
 
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/loading',
       routes: {
         '/': (BuildContext context) => HomeScreen(),
-        '/growingplants': (BuildContext context) => GrowingPlants(),
+        '/activityScreen': (BuildContext context) => ActivityScreen(),
         '/loading': (BuildContext context) => LoadingScreen(),
+        '/activityDetail': (BuildContext context) => ActivityDetail(),
       },
     );
   }

@@ -94,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/growingplants');
+                  Navigator.pushNamed(context, '/activityScreen');
                 },
               ),
               Cards(
