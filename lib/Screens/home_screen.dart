@@ -78,14 +78,17 @@ class HomeScreen extends StatelessWidget {
             ),
             children: <Widget>[
               GestureDetector(
-                child: Cards(
-                  colour: Color(0xFFbdd4ff),
-                  childCard: CardChild(
-                    text: '1. Growing \n plants from \n seeds',
-                    wid: BounceInRight(
-                      child: FlareActor(
-                        'images/Plant new 3.flr',
-                        animation: "plant",
+                child: Hero(
+                  tag: 'Card',
+                  child: Cards(
+                    colour: Color(0xFFbdd4ff),
+                    childCard: CardChild(
+                      text: '1. Food',
+                      wid: BounceInRight(
+                        child: FlareActor(
+                          'images/Plant new 3.flr',
+                          animation: "plant",
+                        ),
                       ),
                     ),
                   ),

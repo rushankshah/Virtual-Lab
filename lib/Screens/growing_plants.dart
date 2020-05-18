@@ -30,15 +30,9 @@ class GrowingPlants extends StatelessWidget {
           image: AssetImage('images/logo.png'),
         ),
       ),
-      // drawer: Drawer(
-      //   child: Container(
-      //     color: Color(0xFF666666),
-      //     child: DrawerWidget(),
-      //   ),
-      // ),
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: <Widget>[
             SizedBox(
               height: 12,
@@ -64,34 +58,108 @@ class GrowingPlants extends StatelessWidget {
             Container(
               height: 140,
               width: double.infinity,
-              child: Cards(
-                colour: Color(0xFFbdd4ff),
-                childCard: CardChild(
-                  text: '1. Growing \n plants from \n seeds',
-                  wid: BounceInRight(
-                    child: FlareActor(
-                      'images/Plant new 3.flr',
-                      //fit: BoxFit.contain,
-                      animation: "plant",
+              child: Hero(
+                tag: 'Card',
+                child: Cards(
+                  colour: Color(0xFFbdd4ff),
+                  childCard: CardChild(
+                    text: '1. Food',
+                    wid: BounceInRight(
+                      child: FlareActor(
+                        'images/Plant new 3.flr',
+                        //fit: BoxFit.contain,
+                        animation: "plant",
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
             Container(
-              height: 380,
               width: double.infinity,
-              child: ListView(children: [
+              child: Column(children: [
                 Container(
-                  height: 45,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                     child: Text(
-                      'Experiment 1',
+                      '1. Germinate seeds to observe how plants grow from seeds.',
                       style: TextStyle(
-                        fontSize: 30,
+                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
+                    ),
+                  ),
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFffbed1)),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color(0xFFa5ffec),
+                  ),
+                  width: double.infinity,
+                  child: ExpansionTile(
+                    title: Text(
+                      '2. Test the presence of carbohydrates, proteins and fats in food items.',
+                      style: TextStyle(
+                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
+                    ),
+                    children: <Widget>[
+                      SizedBox(
+                        width: double.infinity,
+                        child: Divider(
+                          color: Colors.white,
+                        ),
                       ),
+                      Container(
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                          child: Text(
+                            '2a. Test the presence of carbohydrates in food items',
+                            style: TextStyle(
+                                fontSize: 25, fontFamily: 'DustismoRomanBold'),
+                          ),
+                        ),
+                        margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xFFa5ffec)),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Divider(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                          child: Text(
+                            '2b. Test the presence of fats in food items.',
+                            style: TextStyle(
+                                fontSize: 25, fontFamily: 'DustismoRomanBold'),
+                          ),
+                        ),
+                        margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Color(0xFFa5ffec)),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
+                    child: Text(
+                      '3. Observe stomata in leaves.',
+                      style: TextStyle(
+                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
                     ),
                   ),
                   margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -101,32 +169,27 @@ class GrowingPlants extends StatelessWidget {
                 ),
                 Container(
                   width: double.infinity,
-                  height: 45,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                     child: Text(
-                      'Experiment 2',
+                      '4. Study that leaves prepare starch by the process of photosynthesis.',
                       style: TextStyle(
-                        fontSize: 30,
-                      ),
+                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
                     ),
                   ),
                   margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color(0xFFffbed1),
-                  ),
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(0xFFeebbfa)),
                 ),
                 Container(
-                  height: 45,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                     child: Text(
-                      'Experiment 3',
+                      '5. Study how insect pests spoil food grains',
                       style: TextStyle(
-                        fontSize: 30,
-                      ),
+                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
                     ),
                   ),
                   margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -135,72 +198,19 @@ class GrowingPlants extends StatelessWidget {
                       color: Color(0xFFa5ffec)),
                 ),
                 Container(
-                  height: 45,
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
                     child: Text(
-                      'Experiment 4',
+                      '6. Observation of pond water for presence of micro-organisms.',
                       style: TextStyle(
-                        fontSize: 30,
-                      ),
+                          fontSize: 25, fontFamily: 'DustismoRomanBold'),
                     ),
                   ),
                   margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xFFffbed1)),
-                ),
-                Container(
-                  height: 45,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                    child: Text(
-                      'Experiment 5',
-                      style: TextStyle(
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFFa5ffec)),
-                ),
-                Container(
-                  height: 45,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                    child: Text(
-                      'Experiment 6',
-                      style: TextStyle(
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFFa5ffec)),
-                ),
-                Container(
-                  height: 45,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8, 10, 0, 0),
-                    child: Text(
-                      'Experiment 7',
-                      style: TextStyle(
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                  margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xFFa5ffec)),
                 ),
               ]),
             ),
