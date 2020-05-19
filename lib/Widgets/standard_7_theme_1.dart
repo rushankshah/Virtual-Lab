@@ -17,7 +17,8 @@ class Standard7Theme1 extends StatelessWidget {
           ),
           onTap: () {
             Navigator.pushNamed(context, '/activityDetail',
-                arguments: StandardAndThemeDetails(theme: 1, standard: 7));
+                arguments: StandardAndThemeDetails(
+                    theme: 1, standard: 7, activityNumber: 1));
           },
         ),
         Container(
