@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:turing/Widgets/card_child.dart';
 import 'package:turing/Widgets/cards.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:animate_do/animate_do.dart';
 import 'package:turing/Widgets/drawer_widget.dart';
+import 'package:turing/Widgets/standard_and_theme_details.dart';
 import '../constants.dart';
 import 'package:flare_flutter/flare_actor.dart';
 
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 TyperAnimatedTextKit(
                   text: ['VIRTUAL\nLABS'],
-                  textStyle: kvirtual_lab,
+                  textStyle: kVirtualLabText,
                   speed: Duration(milliseconds: 200),
                   isRepeatingAnimation: false,
                 ),
@@ -71,54 +71,38 @@ class HomeScreen extends StatelessWidget {
             title: Text(
               'Standard VII',
               textAlign: TextAlign.start,
-              style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'DustismoRomanBold'),
+              style: kStandardDetailText,
             ),
             children: <Widget>[
               GestureDetector(
-                child: Hero(
-                  tag: 'Card',
-                  child: Cards(
-                    colour: Color(0xFFbdd4ff),
-                    childCard: CardChild(
-                      text: '1. Food',
-                      wid: BounceInRight(
-                        child: FlareActor(
-                          'images/Plant new 3.flr',
-                          animation: "plant",
-                        ),
-                      ),
-                    ),
+                child: Cards(
+                  colour: Color(0xFFbdd4ff),
+                  childCard: CardChild(
+                    text: '1. Food',
+                    flareFileDirectory: 'images/Plant new 3.flr',
+                    animationName: 'plant',
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/activityScreen');
+                  Navigator.pushNamed(context, '/activityScreen',
+                      arguments:
+                          StandardAndThemeDetails(standard: 7, theme: 1));
                 },
               ),
               Cards(
                 colour: Color(0xFFa5ffec),
                 childCard: CardChild(
                   text: '2. Materials',
-                  wid: BounceInRight(
-                    child: FlareActor(
-                      'images/Material.flr',
-                      animation: "Material",
-                    ),
-                  ),
+                  animationName: 'Material',
+                  flareFileDirectory: 'images/Material.flr',
                 ),
               ),
               Cards(
                 colour: Color(0xFFffff99),
                 childCard: CardChild(
                   text: '3. The World\n of Living',
-                  wid: BounceInRight(
-                    child: FlareActor(
-                      'images/exp3 (1).flr',
-                      animation: 'dewdrop',
-                    ),
-                  ),
+                  flareFileDirectory: 'images/exp3 (1).flr',
+                  animationName: 'dewdrop',
                 ),
               )
             ],
@@ -127,18 +111,14 @@ class HomeScreen extends StatelessWidget {
             title: Text(
               'Standard VIII',
               textAlign: TextAlign.start,
-              style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'DustismoRomanBold'),
+              style: kStandardDetailText,
             ),
             children: <Widget>[
-              Text('Coming Soon',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'DustismoRomanBold'))
+              Text(
+                'Coming Soon',
+                textAlign: TextAlign.center,
+                style: kStandardDetailText,
+              )
             ],
           )
         ],

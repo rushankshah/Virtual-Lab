@@ -1,17 +1,14 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class CardChild extends StatelessWidget {
-  final String text;
-  //String img;
-  final Widget wid;
-  CardChild({this.text, this.wid});
+  final String text, flareFileDirectory, animationName;
+  CardChild({this.text, this.animationName, this.flareFileDirectory});
 
   @override
   Widget build(BuildContext context) {
-    //print('$text');
-    //print('$img');
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
@@ -21,11 +18,16 @@ class CardChild extends StatelessWidget {
         BounceInLeft(
           child: Text(
             '$text',
-            style: kcard_text,
+            style: kCardText,
           ),
         ),
         Expanded(
-          child: wid,
+          child: BounceInRight(
+            child: FlareActor(
+              flareFileDirectory,
+              animation: animationName,
+            ),
+          ),
         )
       ],
     );

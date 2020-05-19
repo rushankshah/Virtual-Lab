@@ -27,7 +27,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Text(
             'HOME',
-            style: kdrawer_widget,
+            style: kDrawerWidgetText,
           ),
           SizedBox(
             height: 10,
@@ -41,7 +41,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Text(
             'ABOUT US',
-            style: kdrawer_widget,
+            style: kDrawerWidgetText,
           ),
           SizedBox(
             height: 10,
@@ -55,7 +55,7 @@ class DrawerWidget extends StatelessWidget {
           ),
           Text(
             'CONTACT US',
-            style: kdrawer_widget,
+            style: kDrawerWidgetText,
           ),
           SizedBox(
             height: 10,

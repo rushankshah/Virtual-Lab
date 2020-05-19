@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-const kvirtual_lab=TextStyle(
-fontWeight: FontWeight.w500,
-fontSize: 35,
-fontFamily: 'FrostBiteNarrow');
+const kVirtualLabText = TextStyle(
+    fontWeight: FontWeight.w500, fontSize: 35, fontFamily: 'FrostBiteNarrow');
 
-const kcard_text=TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 28,
-                          fontFamily: 'DustismoBold');
+const kCardText = TextStyle(
+    fontWeight: FontWeight.w500, fontSize: 28, fontFamily: 'DustismoBold');
 
-const kdrawer_widget=TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 20,
-                fontFamily: 'FrostBiteNarrow',
-                color: Colors.white);
+const kDrawerWidgetText = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
+    fontFamily: 'FrostBiteNarrow',
+    color: Colors.white);
+
+const kStandardDetailText = TextStyle(
+    fontSize: 28, fontWeight: FontWeight.bold, fontFamily: 'DustismoRomanBold');
+
+const kOnScreenStandardDetailText = TextStyle(
+    fontSize: 23, fontWeight: FontWeight.bold, fontFamily: 'DustismoRomanBold');
+
+const kActivityText = TextStyle(fontSize: 25, fontFamily: 'DustismoRomanBold');
