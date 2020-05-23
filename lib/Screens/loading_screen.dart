@@ -27,6 +27,7 @@ class LoadingScreen extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.popAndPushNamed(context, '/');
+                Navigator.pop(context);
               },
             ),
             Text(
