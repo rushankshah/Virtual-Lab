@@ -13,7 +13,7 @@ class Standard7Theme1 extends StatelessWidget {
           child: Activity(
             activityName:
                 '1. Germinate seeds to observe how plants grow from seeds.',
-            Colour: Color(0xFFffbed1),
+            colour: Color(0xFFffbed1),
           ),
           onTap: () {
             Navigator.pushNamed(context, '/activityDetail',
@@ -41,7 +41,7 @@ class Standard7Theme1 extends StatelessWidget {
                 ),
               ),
               Activity(
-                Colour: Color(0xFFa5ffec),
+                colour: Color(0xFFa5ffec),
                 activityName:
                     '2a. Test the presence of carbohydrates in food items',
               ),
@@ -54,7 +54,7 @@ class Standard7Theme1 extends StatelessWidget {
               Activity(
                 activityName:
                     '2b. Test the presence of proteins in food items.',
-                Colour: Color(0xFFa5ffec),
+                colour: Color(0xFFa5ffec),
               ),
               SizedBox(
                 width: double.infinity,
@@ -64,28 +64,28 @@ class Standard7Theme1 extends StatelessWidget {
               ),
               Activity(
                 activityName: '2c. Test the presence of fats in food items.',
-                Colour: Color(0xFFa5ffec),
+                colour: Color(0xFFa5ffec),
               )
             ],
           ),
         ),
         Activity(
-          Colour: Color(0xFFffff99),
+          colour: Color(0xFFffff99),
           activityName: '3. Observe stomata in leaves.',
         ),
         Activity(
           activityName:
               '4. Study that leaves prepare starch by the process of photosynthesis.',
-          Colour: Color(0xFFeebbfa),
+          colour: Color(0xFFeebbfa),
         ),
         Activity(
-          Colour: Color(0xFFa5ffec),
+          colour: Color(0xFFa5ffec),
           activityName: '5. Study how insect pests spoil food grains',
         ),
         Activity(
           activityName:
               '6. Observation of pond water for presence of micro-organisms.',
-          Colour: Color(0xFFffbed1),
+          colour: Color(0xFFffbed1),
         ),
       ],
     );

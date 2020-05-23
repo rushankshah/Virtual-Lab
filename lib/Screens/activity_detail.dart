@@ -90,7 +90,7 @@ class ActivityDetail extends StatelessWidget {
               ],
             ),
             Activity(
-              Colour: Color(0xFFffbed1),
+              colour: Color(0xFFffbed1),
               activityName: activityName,
             ),
             SizedBox(

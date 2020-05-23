@@ -4,9 +4,9 @@ import '../constants.dart';
 
 class Activity extends StatelessWidget {
   final String activityName;
-  final Color Colour;
+  final Color colour;
 
-  Activity({this.activityName, this.Colour});
+  Activity({this.activityName, this.colour});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class Activity extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Colour,
+        color: colour,
       ),
     );
   }
