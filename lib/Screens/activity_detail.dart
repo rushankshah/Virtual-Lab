@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:turing/Widgets/activity_layout.dart';
-import 'package:turing/Widgets/question_and_answer_widget.dart';
 import 'package:turing/Widgets/standard_and_theme_details.dart';
+import 'package:turing/Widgets/theory.dart';
 import 'package:turing/constants.dart';
 
 class ActivityDetail extends StatelessWidget {
@@ -47,108 +46,41 @@ class ActivityDetail extends StatelessWidget {
     } else if (std == 8) {
       standard = 'VIII';
     }
-    return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.keyboard_arrow_left,
-            color: Colors.black,
-            size: 40,
+    return DefaultTabController(
+      length: 3,
+          child: Scaffold(
+        key: _scaffoldKey,
+        appBar: AppBar(
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.keyboard_arrow_left,
+              color: Colors.black,
+              size: 40,
+            ),
           ),
-        ),
-        title: Image(
-          height: 75,
-          image: AssetImage('images/logo.png'),
-        ),
-      ),
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              height: 12,
-            ),
-            Row(
-              children: <Widget>[
-                SizedBox(
-                  width: 10,
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Standard $standard',
-                    style: kOnScreenStandardDetailText,
-                  ),
-                ),
-              ],
-            ),
-            Activity(
-              colour: Color(0xFFffbed1),
-              activityName: activityName,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            QuestionAnswerWidget(
-              colour: Color(0xFFbdd4ff),
-              answer: q1Answer,
-              question: 'What we have to do?',
-            ),
-            QuestionAnswerWidget(
-              question: ' What do we need?',
-              answer: q2Answer,
-              colour: Color(0xFFffff99),
-            ),
-            QuestionAnswerWidget(
-              colour: Color(0xFFa5ffec),
-              answer: q3Answer,
-              question: ' How do we proceed?',
-            ),
-            QuestionAnswerWidget(
-              question: 'What do we observe?',
-              answer: q4Answer,
-              colour: Color(0xFFeebbfa),
-            ),
-            QuestionAnswerWidget(
-              colour: Color(0xFFbdd4ff),
-              answer: q5Answer,
-              question: 'What do we conclude?',
-            ),
-            QuestionAnswerWidget(
-              question: ' Let us answer',
-              answer: q6Answer,
-              colour: Color(0xFFffff99),
-            ),
-            QuestionAnswerWidget(
-              colour: Color(0xFFa5ffec),
-              answer: q7Answer,
-              question: ' What more can we do?',
-            ),
-            Container(
-              height: 45,
-              alignment: Alignment.center,
-              margin: EdgeInsets.fromLTRB(80, 10, 80, 10),
-              decoration: BoxDecoration(
-                color: Colors.grey[500],
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Text(
-                'Go to Simulator',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontFamily: 'DustismoRomanBold',
-                    color: Colors.white),
-              ),
-            )
+          title: Image(
+            height: 75,
+            image: AssetImage('images/logo.png'),
+          ),
+          bottom: TabBar(tabs: <Widget>[
+            Tab(child:Text('Theory', style: kTabBarText,),),
+            Tab(child:Text('Simulator', style: kTabBarText,),),
+            Tab(child:Text('Video', style: kTabBarText,),)
           ],
+          indicatorColor: Colors.black,),
         ),
+        backgroundColor: Colors.white,
+        body: TabBarView(children: <Widget>[
+          Theory(standard: standard,q1Answer: q1Answer,q2Answer: q2Answer,q3Answer: q3Answer,q4Answer: q4Answer,q5Answer: q5Answer,q6Answer: q6Answer,q7Answer: q7Answer, activityName: activityName,),
+          Container(child: Center(child: Text('Simulator page'),),),
+          Container(child: Center(child: Text('Video Page'),),)
+        ],)
       ),
     );
   }

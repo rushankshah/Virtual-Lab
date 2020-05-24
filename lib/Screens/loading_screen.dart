@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:turing/constants.dart';
 //import 'package:turing/Screens/home_screen.dart';
 
 class LoadingScreen extends StatelessWidget {
@@ -32,12 +33,7 @@ class LoadingScreen extends StatelessWidget {
             ),
             Text(
               'Get Started',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.w100,
-                fontFamily: 'DustismoBold',
-              ),
+              style: loadingScreenText,
             ),
             SizedBox(
               height: 20,
