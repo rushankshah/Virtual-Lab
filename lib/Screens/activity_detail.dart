@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turing/Widgets/simulator.dart';
 import 'package:turing/Widgets/standard_and_theme_details.dart';
 import 'package:turing/Widgets/theory.dart';
 import 'package:turing/constants.dart';
@@ -48,40 +49,75 @@ class ActivityDetail extends StatelessWidget {
     }
     return DefaultTabController(
       length: 3,
-          child: Scaffold(
-        key: _scaffoldKey,
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.keyboard_arrow_left,
-              color: Colors.black,
-              size: 40,
+      child: Scaffold(
+          key: _scaffoldKey,
+          appBar: AppBar(
+            centerTitle: true,
+            elevation: 0,
+            backgroundColor: Colors.white,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.keyboard_arrow_left,
+                color: Colors.black,
+                size: 40,
+              ),
+            ),
+            title: Image(
+              height: 75,
+              image: AssetImage('images/logo.png'),
+            ),
+            bottom: TabBar(
+              tabs: <Widget>[
+                Tab(
+                  child: Text(
+                    'Theory',
+                    style: kTabBarText,
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Simulator',
+                    style: kTabBarText,
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Video',
+                    style: kTabBarText,
+                  ),
+                )
+              ],
+              indicatorColor: Colors.black,
             ),
           ),
-          title: Image(
-            height: 75,
-            image: AssetImage('images/logo.png'),
-          ),
-          bottom: TabBar(tabs: <Widget>[
-            Tab(child:Text('Theory', style: kTabBarText,),),
-            Tab(child:Text('Simulator', style: kTabBarText,),),
-            Tab(child:Text('Video', style: kTabBarText,),)
-          ],
-          indicatorColor: Colors.black,),
-        ),
-        backgroundColor: Colors.white,
-        body: TabBarView(children: <Widget>[
-          Theory(standard: standard,q1Answer: q1Answer,q2Answer: q2Answer,q3Answer: q3Answer,q4Answer: q4Answer,q5Answer: q5Answer,q6Answer: q6Answer,q7Answer: q7Answer, activityName: activityName,),
-          Container(child: Center(child: Text('Simulator page'),),),
-          Container(child: Center(child: Text('Video Page'),),)
-        ],)
-      ),
+          backgroundColor: Colors.white,
+          body: TabBarView(
+            children: <Widget>[
+              Theory(
+                standard: standard,
+                q1Answer: q1Answer,
+                q2Answer: q2Answer,
+                q3Answer: q3Answer,
+                q4Answer: q4Answer,
+                q5Answer: q5Answer,
+                q6Answer: q6Answer,
+                q7Answer: q7Answer,
+                activityName: activityName,
+              ),
+              Simulator(
+                theme: theme,
+                std: std,
+              ),
+              Container(
+                child: Center(
+                  child: Text('Video Page'),
+                ),
+              )
+            ],
+          )),
     );
   }
 }
