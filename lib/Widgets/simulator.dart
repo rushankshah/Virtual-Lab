@@ -1,29 +1,8 @@
-import 'package:flare_dart/math/mat2d.dart';
-import 'package:flare_flutter/flare.dart';
 import 'package:flare_flutter/flare_actor.dart';
-import 'package:flare_flutter/flare_controller.dart';
+import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/animation_box.dart';
-
 import 'cards.dart';
-
-class SimulatorController extends FlareController {
-  @override
-  bool advance(FlutterActorArtboard artboard, double elapsed) {
-    // TODO: implement advance
-    throw UnimplementedError();
-  }
-
-  @override
-  void initialize(FlutterActorArtboard artboard) {
-    // TODO: implement initialize
-  }
-
-  @override
-  void setViewTransform(Mat2D viewTransform) {
-    // TODO: implement setViewTransform
-  }
-}
 
 class Simulator extends StatefulWidget {
   final int std, theme;
@@ -34,17 +13,17 @@ class Simulator extends StatefulWidget {
 
 class _SimulatorState extends State<Simulator>
     with AutomaticKeepAliveClientMixin<Simulator> {
-  SimulatorController _simulatorController;
+  final FlareControls _flareControls = FlareControls();
   double borderRadius = 22, height = 50, radius = 20;
-  String flareFileDirectory, animationName;
+  String flareFileDirectory;
   String selectedSeed = 'Grams';
+
   @override
   // ignore: must_call_super
   Widget build(BuildContext context) {
     if (widget.std == 7) {
       if (widget.theme == 1) {
         flareFileDirectory = 'images/Theme1Activity1Step1.flr';
-        animationName = 'bowl';
       }
     }
     return ListView(
@@ -53,8 +32,9 @@ class _SimulatorState extends State<Simulator>
           animation: Center(
             child: FlareActor(
               flareFileDirectory,
-              animation: animationName,
-              controller: _simulatorController,
+              animation: 'bowl',
+              controller: _flareControls,
+              alignment: Alignment.center,
             ),
           ),
         ),
@@ -92,7 +72,7 @@ class _SimulatorState extends State<Simulator>
           ),
           onPressed: () {
             setState(() {
-              animationName = 'Seeds';
+              _flareControls.play('Seeds', mix: 1);
             });
           },
         ),
@@ -108,7 +88,7 @@ class _SimulatorState extends State<Simulator>
           ),
           onPressed: () {
             setState(() {
-              animationName = 'water1';
+              _flareControls.play('water1', mix: 1, mixSeconds: 3);
             });
           },
         )
