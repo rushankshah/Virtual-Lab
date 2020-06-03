@@ -16,13 +16,52 @@ class _SimulatorState extends State<Simulator>
   String flareFileDirectory;
   String selectedSeed = 'Grams';
   int _index = 0;
+  int watercount = 0;
+
+  void firstwater() {
+    setState(() {
+      _index = 2;
+      Future.delayed(Duration(seconds: 5), () {
+        setState(() {
+          _index = 3;
+        });
+      });
+    });
+  }
+
+  void secondwater() {
+    setState(() {
+      _index = 4;
+      Future.delayed(Duration(seconds: 5), () {
+        setState(() {
+          _index = 5;
+        });
+      });
+    });
+  }
+
+  void thirdwater() {
+    setState(() {
+      _index = 6;
+      Future.delayed(Duration(seconds: 5), () {
+        setState(() {
+          _index = 7;
+        });
+      });
+    });
+  }
 
   @override
   // ignore: must_call_super
   Widget build(BuildContext context) {
+    if (selectedSeed == 'Moong') {
+      flareFileDirectory = 'images/exp1step1gram.flr';
+    } else if (selectedSeed == 'Grams') {
+      flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+    }
     if (widget.std == 7) {
       if (widget.theme == 1) {
-        flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+        //flareFileDirectory = 'images/Theme1Activity1Step1.flr';
       }
     }
     return ListView(
@@ -50,6 +89,26 @@ class _SimulatorState extends State<Simulator>
               FlareActor(
                 flareFileDirectory,
                 animation: 'waterflow1',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'water2',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'waterflow2',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'water3',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'waterflow3',
                 alignment: Alignment.center,
               ),
             ],
@@ -104,16 +163,34 @@ class _SimulatorState extends State<Simulator>
             childCard: Center(child: Text('Add Water')),
           ),
           onPressed: () {
+            print(watercount);
             setState(() {
-              _index = 2;
-              Future.delayed(Duration(seconds: 5), () {
-                setState(() {
-                  _index = 3;
-                });
-              });
+              if (watercount == 0) {
+                firstwater();
+                watercount = watercount + 1;
+              } else if (watercount == 1) {
+                secondwater();
+                watercount = watercount + 1;
+              } else if (watercount == 2) {
+                thirdwater();
+                watercount = watercount + 1;
+              }
+              // else{
+              //   Scaffold.of(context).showSnackBar(
+              //     SnackBar(
+              //       content: Row(
+              //         children: <Widget>[
+              //           Icon(Icons.error),
+              //           Text('You cannot add more Water',style: TextStyle(fontSize:20,),),
+              //         ],
+              //       ),
+              //     ),
+              //   );
+              // }
+              //});
             });
           },
-        )
+        ),
       ],
     );
   }
