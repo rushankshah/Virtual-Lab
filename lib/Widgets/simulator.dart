@@ -1,6 +1,6 @@
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/animation_box.dart';
+import 'package:turing/Widgets/play_animation.dart';
 import 'cards.dart';
 
 class Simulator extends StatefulWidget {
@@ -16,12 +16,12 @@ class _SimulatorState extends State<Simulator>
   String flareFileDirectory;
   String selectedSeed = 'Grams';
   int _index = 0;
-  int watercount = 0;
+  int _waterCount = 0;
 
-  void firstwater() {
+  void firstWater() {
     setState(() {
       _index = 2;
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 3;
         });
@@ -29,10 +29,10 @@ class _SimulatorState extends State<Simulator>
     });
   }
 
-  void secondwater() {
+  void secondWater() {
     setState(() {
       _index = 4;
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 5;
         });
@@ -40,10 +40,10 @@ class _SimulatorState extends State<Simulator>
     });
   }
 
-  void thirdwater() {
+  void thirdWater() {
     setState(() {
       _index = 6;
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 7;
         });
@@ -59,11 +59,6 @@ class _SimulatorState extends State<Simulator>
     } else if (selectedSeed == 'Grams') {
       flareFileDirectory = 'images/Theme1Activity1Step1.flr';
     }
-    if (widget.std == 7) {
-      if (widget.theme == 1) {
-        //flareFileDirectory = 'images/Theme1Activity1Step1.flr';
-      }
-    }
     return ListView(
       children: <Widget>[
         AnimationBox(
@@ -71,46 +66,38 @@ class _SimulatorState extends State<Simulator>
               child: IndexedStack(
             index: _index,
             children: <Widget>[
-              FlareActor(
-                flareFileDirectory,
-                animation: 'bowl',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'bowl',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'Seeds',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'Seeds',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'water1',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'water1',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'waterflow1',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'waterflow1',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'water2',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'water2',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'waterflow2',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'waterflow2',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'water3',
-                alignment: Alignment.center,
+              PlayAnimation(
+                animationName: 'water3',
+                flareFileDirectory: flareFileDirectory,
               ),
-              FlareActor(
-                flareFileDirectory,
-                animation: 'waterflow3',
-                alignment: Alignment.center,
-              ),
+              PlayAnimation(
+                animationName: 'waterflow3',
+                flareFileDirectory: flareFileDirectory,
+              )
             ],
           )),
         ),
@@ -149,6 +136,7 @@ class _SimulatorState extends State<Simulator>
           onPressed: () {
             setState(() {
               _index = 1;
+              _waterCount = 0;
             });
           },
         ),
@@ -163,31 +151,18 @@ class _SimulatorState extends State<Simulator>
             childCard: Center(child: Text('Add Water')),
           ),
           onPressed: () {
-            print(watercount);
+            print(_waterCount);
             setState(() {
-              if (watercount == 0) {
-                firstwater();
-                watercount = watercount + 1;
-              } else if (watercount == 1) {
-                secondwater();
-                watercount = watercount + 1;
-              } else if (watercount == 2) {
-                thirdwater();
-                watercount = watercount + 1;
-              }
-              // else{
-              //   Scaffold.of(context).showSnackBar(
-              //     SnackBar(
-              //       content: Row(
-              //         children: <Widget>[
-              //           Icon(Icons.error),
-              //           Text('You cannot add more Water',style: TextStyle(fontSize:20,),),
-              //         ],
-              //       ),
-              //     ),
-              //   );
-              // }
-              //});
+              if (_waterCount == 0) {
+                firstWater();
+                _waterCount = _waterCount + 1;
+              } else if (_waterCount == 1) {
+                secondWater();
+                _waterCount = _waterCount + 1;
+              } else if (_waterCount == 2) {
+                thirdWater();
+                _waterCount = _waterCount + 1;
+              } else {}
             });
           },
         ),

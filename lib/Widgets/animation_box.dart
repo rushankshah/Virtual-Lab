@@ -10,7 +10,7 @@ class AnimationBox extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(30),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: Colors.black,
           width: 2,
