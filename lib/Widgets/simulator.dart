@@ -1,5 +1,4 @@
 import 'package:flare_flutter/flare_actor.dart';
-import 'package:flare_flutter/flare_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/animation_box.dart';
 import 'cards.dart';
@@ -13,10 +12,10 @@ class Simulator extends StatefulWidget {
 
 class _SimulatorState extends State<Simulator>
     with AutomaticKeepAliveClientMixin<Simulator> {
-  final FlareControls _flareControls = FlareControls();
   double borderRadius = 22, height = 50, radius = 20;
   String flareFileDirectory;
   String selectedSeed = 'Grams';
+  int _index = 0;
 
   @override
   // ignore: must_call_super
@@ -30,13 +29,31 @@ class _SimulatorState extends State<Simulator>
       children: <Widget>[
         AnimationBox(
           animation: Center(
-            child: FlareActor(
-              flareFileDirectory,
-              animation: 'bowl',
-              controller: _flareControls,
-              alignment: Alignment.center,
-            ),
-          ),
+              child: IndexedStack(
+            index: _index,
+            children: <Widget>[
+              FlareActor(
+                flareFileDirectory,
+                animation: 'bowl',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'Seeds',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'water1',
+                alignment: Alignment.center,
+              ),
+              FlareActor(
+                flareFileDirectory,
+                animation: 'waterflow1',
+                alignment: Alignment.center,
+              ),
+            ],
+          )),
         ),
         Container(
           child: Center(
@@ -72,7 +89,7 @@ class _SimulatorState extends State<Simulator>
           ),
           onPressed: () {
             setState(() {
-              _flareControls.play('Seeds', mix: 1);
+              _index = 1;
             });
           },
         ),
@@ -88,7 +105,12 @@ class _SimulatorState extends State<Simulator>
           ),
           onPressed: () {
             setState(() {
-              _flareControls.play('water1', mix: 1, mixSeconds: 3);
+              _index = 2;
+              Future.delayed(Duration(seconds: 5), () {
+                setState(() {
+                  _index = 3;
+                });
+              });
             });
           },
         )
