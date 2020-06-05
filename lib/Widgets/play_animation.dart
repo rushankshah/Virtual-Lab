@@ -13,7 +13,7 @@ class PlayAnimation extends StatelessWidget {
       flareFileDirectory,
       animation: animationName,
       alignment: Alignment.center,
-      fit: BoxFit.fill,
+      fit: BoxFit.contain,
     );
   }
 }
