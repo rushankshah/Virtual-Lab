@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:turing/Widgets/animation_box.dart';
 import 'package:turing/Widgets/play_animation.dart';
+import 'package:turing/constants.dart';
 import 'cards.dart';
 
 class Simulator extends StatefulWidget {
@@ -13,15 +14,14 @@ class Simulator extends StatefulWidget {
 class _SimulatorState extends State<Simulator>
     with AutomaticKeepAliveClientMixin<Simulator> {
   double borderRadius = 22, height = 50, radius = 20;
-  String flareFileDirectory;
+  String flareFileDirectory = 'images/Theme1Activity1Step1.flr';
   String selectedSeed = 'Grams';
   int _index = 0;
-  int _waterCount = 0;
 
   void firstWater() {
     setState(() {
       _index = 2;
-      Future.delayed(Duration(seconds: 4), () {
+      Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 3;
         });
@@ -32,7 +32,7 @@ class _SimulatorState extends State<Simulator>
   void secondWater() {
     setState(() {
       _index = 4;
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 5;
         });
@@ -43,7 +43,7 @@ class _SimulatorState extends State<Simulator>
   void thirdWater() {
     setState(() {
       _index = 6;
-      Future.delayed(Duration(seconds: 5), () {
+      Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 7;
         });
@@ -52,22 +52,13 @@ class _SimulatorState extends State<Simulator>
   }
 
   void drainWater() {
-    print(flareFileDirectory);
     setState(() {
-      print('$flareFileDirectory mad');
-
       _index = 9;
       Future.delayed(Duration(seconds: 4), () {
         setState(() {
           _index = 10;
         });
       });
-    });
-  }
-
-  void coverSeeds() {
-    setState(() {
-      _index = 11;
     });
   }
 
@@ -79,63 +70,133 @@ class _SimulatorState extends State<Simulator>
     // } else if (selectedSeed == 'Grams') {
     //   flareFileDirectory = 'images/Theme1Activity1Step1.flr';
     // }
+    String theoryText = '';
+    String text = '';
+    Color color = Colors.pink[200];
+    if(_index == 0){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add seeds';
+      color = Color(0xFFffbed1);
+    }
+    else if(_index == 1){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add water';
+      color = Color(0xFFffff99);
+    }
+    else if(_index == 2){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add water';
+      color = Color(0xFFffff99);
+    }
+    else if(_index == 3){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add water';
+      color = Color(0xFFffff99);
+    }
+    else if(_index == 4){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add water';
+      color = Color(0xFFffff99);
+    }
+    else if(_index == 5){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add water';
+      color = Color(0xFFffff99);
+    }
+    else if(_index == 6){
+      theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
+      text = 'Add water';
+      color = Color(0xFFffff99);
+    }
+    else if(_index == 7){
+      theoryText = 'Soak the seeds overnight';
+      text = 'Soak Overnight';
+      color = Color(0xFFa5ffec);
+    }
+    else if(_index == 8){
+      theoryText = 'Next day, drain the excess water and cover the seeds with wet cotton cloth. ';
+      text = 'Drain Water';
+      color = Color(0xFFeebbfa);
+    }
+    else if(_index == 9){
+      theoryText = 'Next day, drain the excess water and cover the seeds with wet cotton cloth. ';
+      text = 'Drain Water';
+      color = Color(0xFFeebbfa);
+    }
+    else if(_index == 10){
+      theoryText = 'Cover the seeds';
+      text = 'Cover seeds';
+      color = Color(0xFFbdd4ff);
+    }
+    else if(_index == 11){
+      text = 'Restart the animation';
+      theoryText = 'Congratulations on completing the experiment virtually';
+    }
     return ListView(
       children: <Widget>[
         AnimationBox(
           animation: Center(
-              child: IndexedStack(
+              child: Column(
+                children: <Widget>[
+                  Text(theoryText, style: kActivityText,),
+                  Container(
+                    height: 300,
+                    child: IndexedStack(
             index: _index,
             children: <Widget>[
-              PlayAnimation(
-                animationName: 'bowl',
-                flareFileDirectory: 'images/Theme1Activity1Step1.flr',
-              ),
-              PlayAnimation(
-                animationName: 'Seeds',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'water1',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'waterflow1',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'water2',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'waterflow2',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'water3',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'waterflow3',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'daynightswitch',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'drainwater',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'flow',
-                flareFileDirectory: flareFileDirectory,
-              ),
-              PlayAnimation(
-                animationName: 'cover',
-                flareFileDirectory: flareFileDirectory,
-              ),
+                    PlayAnimation(
+                      animationName: 'bowl',
+                      flareFileDirectory: 'images/Theme1Activity1Step1.flr',
+                    ),
+                    PlayAnimation(
+                      animationName: 'Seeds',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'water1',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'waterflow1',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'water2',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'waterflow2',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'water3',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'waterflow3',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'daynightswitch',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'drainwater',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'flow',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'cover',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
             ],
-          )),
+          ),
+                  ),
+                ],
+              )),
         ),
         Container(
           child: Center(
@@ -167,8 +228,8 @@ class _SimulatorState extends State<Simulator>
           child: Cards(
             height: height,
             radius: radius,
-            colour: Color(0xFFbdd4ff),
-            childCard: Center(child: Text('Add Seeds')),
+            colour: color,
+            childCard: Center(child: Text(text)),
           ),
           onPressed: () {
             if (selectedSeed == 'Grams') {
@@ -177,109 +238,42 @@ class _SimulatorState extends State<Simulator>
               flareFileDirectory = 'images/Theme1Activity1Step1.flr';
             }
             setState(() {
-              if (_index == 0) {
-                _index = 1;
-                _waterCount = 0;
-              } else {
-                _index = 0;
-                _waterCount = 0;
-              }
-            });
-          },
-        ),
-        FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
-          child: Cards(
-            height: height,
-            radius: radius,
-            colour: Color(0xFFffff99),
-            childCard: Center(child: Text('Add Water')),
-          ),
-          onPressed: () {
-            if (selectedSeed == 'Moong') {
-              flareFileDirectory = 'images/Theme1Activity1Step1.flr';
-            } else if (selectedSeed == 'Grams') {
-              flareFileDirectory = 'images/exp1step1gram.flr';
+              if(_index == 0){
+              _index++;
             }
-            print(_waterCount);
-            setState(() {
-              if (_waterCount == 0) {
-                firstWater();
-                _waterCount = _waterCount + 1;
-              } else if (_waterCount == 1) {
-                secondWater();
-                _waterCount = _waterCount + 1;
-              } else if (_waterCount == 2) {
-                thirdWater();
-                _waterCount = _waterCount + 1;
-              } else {}
-            });
-          },
-        ),
-        FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
-          child: Cards(
-            height: height,
-            radius: radius,
-            colour: Color(0xFFbdd4ff),
-            childCard: Center(child: Text('Soak overnight')),
-          ),
-          onPressed: () {
-            setState(() {
-              flareFileDirectory='images/daynight.flr';
-              _index=8;
-              // if (selectedSeed == 'Moong') {
-              //   flareFileDirectory = 'images/Coverseeds_moong.flr';
-              // } else if (selectedSeed == 'Grams') {
-              //   flareFileDirectory = 'images/Coverseeds_gram.flr';
-              // }
-              // coverSeeds();
-            });
-          },
-        ),
-        FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
-          child: Cards(
-            height: height,
-            radius: radius,
-            colour: Color(0xFFbdd4ff),
-            childCard: Center(child: Text('Drain Water')),
-          ),
-          onPressed: () {
-            setState(() {
-              if (selectedSeed == 'Moong') {
-                flareFileDirectory = 'images/remove water_moong.flr';
-              } else if (selectedSeed == 'Grams') {
-                flareFileDirectory = 'images/remove water_gram.flr';
+              else if(_index == 1)
+              firstWater();
+              else if(_index == 3)
+              secondWater();
+              else if(_index == 5)
+              thirdWater();
+              else if(_index == 7)
+              {
+                flareFileDirectory = 'images/daynight.flr';
+                _index++;
               }
-              drainWater();
-            });
-          },
-        ),
-        FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
-          child: Cards(
-            height: height,
-            radius: radius,
-            colour: Color(0xFFbdd4ff),
-            childCard: Center(child: Text('Cover Seeds')),
-          ),
-          onPressed: () {
-            setState(() {
-              if (selectedSeed == 'Moong') {
-                flareFileDirectory = 'images/Coverseeds_moong.flr';
-              } else if (selectedSeed == 'Grams') {
-                flareFileDirectory = 'images/Coverseeds_gram.flr';
+              else if(_index == 8)
+              {
+                if (selectedSeed == 'Grams') {
+              flareFileDirectory = 'images/remove water_gram.flr';
+              } else if (selectedSeed == 'Moong') {
+              flareFileDirectory = 'images/remove water_moong.flr';
               }
-              coverSeeds();
+            drainWater();
+              }
+              else if(_index == 10){
+                if (selectedSeed == 'Grams') {
+              flareFileDirectory = 'images/Coverseeds_gram.flr';
+              } else if (selectedSeed == 'Moong') {
+              flareFileDirectory = 'images/Coverseeds_moong.flr';
+              }
+              _index++;
+              }
+              else if(_index == 11){
+                setState(() {
+                  _index = 0;
+                });
+              }
             });
           },
         ),
@@ -288,6 +282,5 @@ class _SimulatorState extends State<Simulator>
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }
