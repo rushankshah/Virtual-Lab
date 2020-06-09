@@ -255,7 +255,7 @@ class _SimulatorState extends State<Simulator>
               else if(_index == 8)
               {
                 if (selectedSeed == 'Grams') {
-              flareFileDirectory = 'images/remove water_gram.flr';
+              flareFileDirectory = 'images/remove water_new_gram.flr';
               } else if (selectedSeed == 'Moong') {
               flareFileDirectory = 'images/remove water_moong.flr';
               }
