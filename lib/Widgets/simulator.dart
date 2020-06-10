@@ -13,17 +13,26 @@ class Simulator extends StatefulWidget {
 
 class _SimulatorState extends State<Simulator>
     with AutomaticKeepAliveClientMixin<Simulator> {
+
   double borderRadius = 22, height = 50, radius = 20;
   String flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+  String drainWaterAnimationName = '';
   String selectedSeed = 'Grams';
+  String waterText = '';
   int _index = 0;
-
+  int amount = 0;
+  String flowName = '';
+  bool _waterAdded = false;
   void firstWater() {
     setState(() {
       _index = 2;
+      drainWaterAnimationName = 'drainwater1 ';
+      waterText = 'Move ahead? Click here! (Atleast 400 ml water is suggested)';
+      amount++;
       Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 3;
+          _waterAdded = true;
         });
       });
     });
@@ -32,9 +41,13 @@ class _SimulatorState extends State<Simulator>
   void secondWater() {
     setState(() {
       _index = 4;
+      drainWaterAnimationName = 'drainwater2';
+      waterText = 'Move ahead? Click here!';
+      amount++;
       Future.delayed(Duration(seconds: 3), () {
         setState(() {
           _index = 5;
+          _waterAdded = true;
         });
       });
     });
@@ -43,9 +56,12 @@ class _SimulatorState extends State<Simulator>
   void thirdWater() {
     setState(() {
       _index = 6;
+      drainWaterAnimationName = 'drainwater3';
       Future.delayed(Duration(seconds: 3), () {
         setState(() {
+          flowName = 'flow3';
           _index = 7;
+          _waterAdded = false;
         });
       });
     });
@@ -65,11 +81,6 @@ class _SimulatorState extends State<Simulator>
   @override
   // ignore: must_call_super
   Widget build(BuildContext context) {
-    // if (selectedSeed == 'Moong') {
-    //   flareFileDirectory = 'images/exp1step1gram.flr';
-    // } else if (selectedSeed == 'Grams') {
-    //   flareFileDirectory = 'images/Theme1Activity1Step1.flr';
-    // }
     String theoryText = '';
     String text = '';
     Color color = Colors.pink[200];
@@ -95,17 +106,17 @@ class _SimulatorState extends State<Simulator>
     }
     else if(_index == 4){
       theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
-      text = 'Add water';
+      text = 'Add 200 ml water';
       color = Color(0xFFffff99);
     }
     else if(_index == 5){
       theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
-      text = 'Add water';
+      text = 'Add 200 ml water';
       color = Color(0xFFffff99);
     }
     else if(_index == 6){
       theoryText = '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.';
-      text = 'Add water';
+      text = 'Add 200 ml water';
       color = Color(0xFFffff99);
     }
     else if(_index == 7){
@@ -181,11 +192,11 @@ class _SimulatorState extends State<Simulator>
                       flareFileDirectory: flareFileDirectory,
                     ),
                     PlayAnimation(
-                      animationName: 'drainwater',
+                      animationName: drainWaterAnimationName,
                       flareFileDirectory: flareFileDirectory,
                     ),
                     PlayAnimation(
-                      animationName: 'flow',
+                      animationName: flowName,
                       flareFileDirectory: flareFileDirectory,
                     ),
                     PlayAnimation(
@@ -226,72 +237,116 @@ class _SimulatorState extends State<Simulator>
             ),
           ),
         ),
-        FlatButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
-          child: Cards(
-            height: height,
-            radius: radius,
-            colour: color,
-            childCard: Center(child: Text(text)),
-          ),
-          onPressed: () {
-            if (selectedSeed == 'Grams') {
-              flareFileDirectory = 'images/exp1step1gram.flr';
-            } else if (selectedSeed == 'Moong') {
-              flareFileDirectory = 'images/Theme1Activity1Step1.flr';
-            }
-            setState(() {
-              if(_index == 0){
-              setState(() {
-                _index++;
-              });
-            }
-              else if(_index == 1)
-              firstWater();
-              else if(_index == 3)
-              secondWater();
-              else if(_index == 5)
-              thirdWater();
-              else if(_index == 7)
-              {
-                flareFileDirectory = 'images/daynight.flr';
-                _index++;
-              }
-              else if(_index == 8)
-              {
+        Column(
+          children: <Widget>[
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+              ),
+              child: Cards(
+                height: height,
+                radius: radius,
+                colour: color,
+                childCard: Center(child: Text(text)),
+              ),
+              onPressed: () {
                 if (selectedSeed == 'Grams') {
-              flareFileDirectory = 'images/remove water_new_gram.flr';
-              } else if (selectedSeed == 'Moong') {
-              flareFileDirectory = 'images/remove water_moong.flr';
-              }
-            drainWater();
-              }
-              else if(_index == 10){
-                if (selectedSeed == 'Grams') {
-              flareFileDirectory = 'images/Coverseeds_gram.flr';
-              } else if (selectedSeed == 'Moong') {
-              flareFileDirectory = 'images/Coverseeds_moong.flr';
-              }
-              setState(() {
-                _index++;
-              });
-              }
-              else if(_index == 11){
+                  flareFileDirectory = 'images/exp1step1gram.flr';
+                } else if (selectedSeed == 'Moong') {
+                  flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+                }
                 setState(() {
-                  if (selectedSeed == 'Grams') {
-              flareFileDirectory = 'images/exp1step1gram.flr';
-            } else if (selectedSeed == 'Moong') {
-              flareFileDirectory = 'images/Theme1Activity1Step1.flr';
-            }
-                  _index = 0;
-                  _index = 0;
-                  
+                  if(_index == 0){
+                  setState(() {
+                    _index++;
+                  });
+                }
+                  else if(_index == 1)
+                  {
+                    firstWater();
+                    }
+                  else if(_index == 3)
+                  {
+                    secondWater();
+                    }
+                  else if(_index == 5)
+                  {
+                    thirdWater();
+                    }
+                  else if(_index == 7)
+                  {
+                    setState(() {
+                      flareFileDirectory = 'images/daynight.flr';
+                    _index++;
+                    });
+                  }
+                  else if(_index == 8)
+                  {
+                    setState(() {
+                      if (selectedSeed == 'Grams') {
+                  flareFileDirectory = 'images/remove water_new_gram.flr';
+                  } else if (selectedSeed == 'Moong') {
+                  flareFileDirectory = 'images/remove water_new_moong.flr';
+                  }
+                    });
+                drainWater();
+                  }
+                  else if(_index == 10){
+                   
+                  setState(() {
+                     if (selectedSeed == 'Grams') {
+                  flareFileDirectory = 'images/Coverseeds_new_gram.flr';
+                  } else if (selectedSeed == 'Moong') {
+                  flareFileDirectory = 'images/Coverseeds_new_moong.flr';
+                  }
+                    _index++;
+                  });
+                  }
+                  else if(_index == 11){
+                    setState(() {
+                      if (selectedSeed == 'Grams') {
+                  flareFileDirectory = 'images/exp1step1gram.flr';
+                } else if (selectedSeed == 'Moong') {
+                  flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+                }
+                      _index = 0;
+                      
+                    });
+                  }
                 });
-              }
-            });
-          },
+              },
+            ),
+            _waterAdded?FlatButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+              ),
+              child: Cards(
+                height: height,
+                radius: radius,
+                colour: Colors.white,
+                childCard: Center(child: Text(waterText, style: TextStyle(color: Colors.black),)),
+              ),
+              onPressed: (){
+                  if(amount == 1){
+                    setState(() {
+                      flareFileDirectory = 'images/daynight.flr';
+                      drainWaterAnimationName = 'drainwater1';
+                      _index = 8;
+                      flowName = 'flow1';
+                      _waterAdded = false;
+                    });
+                  }else if(amount == 2){
+                    setState(() {
+                      flareFileDirectory = 'images/daynight.flr';
+                      drainWaterAnimationName = 'drainwater2';
+                      _index = 8;
+                      flowName = 'flow2';
+                      _waterAdded = false;
+                    });
+                  }
+              },
+              ):Container()
+          ],
         ),
       ],
     );

@@ -46,17 +46,10 @@ flutter:
   uses-material-design: true
   assets:
     - images/
-    - images/Loading.flr
-    - images/Lab Final.flr  
-    - images/exp3 (1).flr
-    - images/Material.flr
-    - images/Theme1Activity1Step1.flr
-    - images/exp1step1gram.flr
+    - images/Coverseeds_new_gram.flr
+    - images/Coverseeds_new_moong.flr
     - images/remove water_new_gram.flr
-    - images/remove water_moong.flr
-    - images/Coverseeds_gram.flr
-    - images/Coverseeds_moong.flr
-    - images/daynight.flr
+    - images/remove water_new_moong.flr
   fonts:
     - family: DustismoRomanBold
       fonts:
