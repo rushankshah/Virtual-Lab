@@ -138,7 +138,7 @@ class _SimulatorState extends State<Simulator>
           animation: Center(
               child: Column(
                 children: <Widget>[
-                  Text(theoryText, style: kActivityText,),
+                  Container(child: Text(theoryText, style: kActivityText,), height: 175,),
                   Container(
                     height: 300,
                     child: IndexedStack(
@@ -216,6 +216,11 @@ class _SimulatorState extends State<Simulator>
                 setState(() {
                   selectedSeed = value;
                   _index = 0;
+                  if (selectedSeed == 'Grams') {
+              flareFileDirectory = 'images/exp1step1gram.flr';
+            } else if (selectedSeed == 'Moong') {
+              flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+            }
                 });
               },
             ),
@@ -239,7 +244,9 @@ class _SimulatorState extends State<Simulator>
             }
             setState(() {
               if(_index == 0){
-              _index++;
+              setState(() {
+                _index++;
+              });
             }
               else if(_index == 1)
               firstWater();
@@ -267,11 +274,20 @@ class _SimulatorState extends State<Simulator>
               } else if (selectedSeed == 'Moong') {
               flareFileDirectory = 'images/Coverseeds_moong.flr';
               }
-              _index++;
+              setState(() {
+                _index++;
+              });
               }
               else if(_index == 11){
                 setState(() {
+                  if (selectedSeed == 'Grams') {
+              flareFileDirectory = 'images/exp1step1gram.flr';
+            } else if (selectedSeed == 'Moong') {
+              flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+            }
                   _index = 0;
+                  _index = 0;
+                  
                 });
               }
             });

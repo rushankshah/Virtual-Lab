@@ -32,7 +32,7 @@ class ActivityDetail extends StatelessWidget {
           q1Answer = 'Germinate seeds to observe how plants grow from seeds.';
           q2Answer =
               'Dry whole seeds of gram or moong (green gram), Petri dish, cotton cloth, water.';
-          q3Answer =
+          q3Answer =  
               '1. Soak 20-25 dry whole seeds of gram or moong in a Petri dish or container filled with water.\n2. Next day, drain the excess water and cover the seeds with wet cotton cloth.\n3. Keep the cotton cloth moist for 2-3 days by soaking them in water at regular intervals. Seeds may be washed or rinsed each day to prevent rotting.\n4. Observe the seeds each day.';
           q4Answer =
               'The seeds swell or increase in size on Day 1. Next day, a small white structure emerges from each seed. It gradually elongates during the next 2-3 days and small hair like outgrowths appear around it just behind it’s tips.';
