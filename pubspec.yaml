@@ -50,6 +50,10 @@ flutter:
     - images/Coverseeds_new_moong.flr
     - images/remove water_new_gram.flr
     - images/remove water_new_moong.flr
+    - images/daynightgram.flr
+    - images/daynightmoong.flr
+    - images/Exp1gram.flr
+    - images/Exp1moong.flr
   fonts:
     - family: DustismoRomanBold
       fonts:
