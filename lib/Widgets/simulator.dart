@@ -132,7 +132,7 @@ class _SimulatorState extends State<Simulator>
     else if(_index == 9){
       theoryText = 'Next day, drain the excess water and cover the seeds with wet cotton cloth. ';
       text = 'Drain Water';
-      color = Color(0xFFeebbfa);
+      color = Color(0xFFffff99);
     }
     else if(_index == 10){
       theoryText = 'Next day, drain the excess water and cover the seeds with wet cotton cloth. ';
@@ -145,9 +145,19 @@ class _SimulatorState extends State<Simulator>
       color = Color(0xFFeebbfa);
     }
     else if(_index == 12){
-      text = 'Restart the animation';
-      theoryText = 'Congratulations on completing the experiment virtually';
+      theoryText = 'Little sprouts coming out';
+      text = 'Observe the next day -->>';
       color = Color(0xFFffff99);
+    }
+    else if(_index == 13){
+      theoryText = 'Sprouts become visible';
+      text = 'Observe the next day -->>';
+      color = Color(0xFFbdd4ff);
+    }
+    else if(_index == 14){
+      text = 'Restart the animation';
+      theoryText = 'The sprouts become larger.... Congratulations on completing the experiment virtually';
+      color = Color(0xFFffbed1);
     }
     return ListView(
       children: <Widget>[
@@ -210,7 +220,15 @@ class _SimulatorState extends State<Simulator>
                       flareFileDirectory: flareFileDirectory,
                     ),
                     PlayAnimation(
-                      animationName: 'growth',
+                      animationName: 'day1',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'day2',
+                      flareFileDirectory: flareFileDirectory,
+                    ),
+                    PlayAnimation(
+                      animationName: 'day3',
                       flareFileDirectory: flareFileDirectory,
                     ),
             ],
@@ -287,9 +305,9 @@ class _SimulatorState extends State<Simulator>
                   {
                     setState(() {
                       if (selectedSeed == 'Grams') {
-                  flareFileDirectory = 'images/daynightgram.flr';
+                  flareFileDirectory = 'images/daynight_gram.flr';
                 } else if (selectedSeed == 'Moong') {
-                  flareFileDirectory = 'images/daynightmoong.flr';
+                  flareFileDirectory = 'images/daynight_moong.flr';
                 }
                     _index++;
                     });
@@ -320,9 +338,9 @@ class _SimulatorState extends State<Simulator>
                   {
                     setState(() {
                       if (selectedSeed == 'Grams') {
-                  flareFileDirectory = 'images/daynightgram.flr';
+                  flareFileDirectory = 'images/daynight_gram.flr';
                 } else if (selectedSeed == 'Moong') {
-                  flareFileDirectory = 'images/daynightmoong.flr';
+                  flareFileDirectory = 'images/daynight_moong.flr';
                 }
                     _index++;
                     });
@@ -330,9 +348,29 @@ class _SimulatorState extends State<Simulator>
                   else if(_index == 12){
                     setState(() {
                       if (selectedSeed == 'Grams') {
-                  flareFileDirectory = 'images/exp1step1gram.flr';
+                  flareFileDirectory = 'images/daynight_gram.flr';
                 } else if (selectedSeed == 'Moong') {
-                  flareFileDirectory = 'images/Theme1Activity1Step1.flr';
+                  flareFileDirectory = 'images/daynight_moong.flr';
+                }
+                      _index++;
+                    });
+                  }
+                  else if(_index == 13){
+                    setState(() {
+                      if (selectedSeed == 'Grams') {
+                  flareFileDirectory = 'images/daynight_gram.flr';
+                } else if (selectedSeed == 'Moong') {
+                  flareFileDirectory = 'images/daynight_moong.flr';
+                }
+                      _index++;
+                    });
+                  }
+                  else if(_index == 14){
+                    setState(() {
+                      if (selectedSeed == 'Grams') {
+                  flareFileDirectory = 'images/Exp1gram.flr';
+                } else if (selectedSeed == 'Moong') {
+                  flareFileDirectory = 'images/Exp1moong.flr';
                 }
                       _index = 0;
                       
@@ -354,7 +392,7 @@ class _SimulatorState extends State<Simulator>
               onPressed: (){
                   if(amount == 1){
                     setState(() {
-                      flareFileDirectory = 'images/daynight.flr';
+                      flareFileDirectory = 'images/daynight_gram.flr';
                       drainWaterAnimationName = 'drainwater1';
                       _index = 8;
                       flowName = 'flow1';
@@ -362,7 +400,7 @@ class _SimulatorState extends State<Simulator>
                     });
                   }else if(amount == 2){
                     setState(() {
-                      flareFileDirectory = 'images/daynight.flr';
+                      flareFileDirectory = 'images/daynight_moong.flr';
                       drainWaterAnimationName = 'drainwater2';
                       _index = 8;
                       flowName = 'flow2';

@@ -8,7 +8,7 @@ class PlayAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("$flareFileDirectory playanimation");
+
     return FlareActor(
       flareFileDirectory,
       animation: animationName,
