@@ -1,4 +1,5 @@
-# turing
+# Virtual Labs
+![{/images/logo.png}]
 
 Virtual Lab Project for kids
 
