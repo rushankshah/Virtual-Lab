@@ -1,5 +1,5 @@
 # Virtual Labs
-![{/images/logo.png}]
+![Virtual Labs logo](images/logo.png)
 
 Virtual Lab Project for kids
 
