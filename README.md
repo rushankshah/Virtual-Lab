@@ -5,7 +5,7 @@
 
 This app is developed for students so that they can simulate their experiments online, giving them freedom to experiment with their curriculum.
 
-The web version can be seen on: https://github.com/mehtaAnsh/VirtualLabs-React#build-setup
+The web version can be seen on: https://github.com/mehtaAnsh/VirtualLabs-React
 
 ## Getting Started
 
@@ -42,3 +42,5 @@ samples, guidance on mobile development, and a full API reference.
 ![Screenshot](images/ScreenShots/SS18.jpeg)
 ![Screenshot](images/ScreenShots/SS19.jpeg)
 ![Screenshot](images/ScreenShots/SS20.jpeg)
+
+>This was made by Rushank Shah and Devika Patadia. The design was made by Richa Shah and Dhruvil Shah.
