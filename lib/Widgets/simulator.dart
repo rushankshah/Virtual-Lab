@@ -155,7 +155,7 @@ class _SimulatorState extends State<Simulator>
       color = Color(0xFFbdd4ff);
     }
     else if(_index == 14){
-      text = 'Restart the animation';
+      text = 'Go Back';
       theoryText = 'The sprouts become larger.... Congratulations on completing the experiment virtually';
       color = Color(0xFFffbed1);
     }
@@ -367,13 +367,13 @@ class _SimulatorState extends State<Simulator>
                   }
                   else if(_index == 14){
                     setState(() {
-                      if (selectedSeed == 'Grams') {
-                  flareFileDirectory = 'images/Exp1gram.flr';
-                } else if (selectedSeed == 'Moong') {
-                  flareFileDirectory = 'images/Exp1moong.flr';
-                }
-                      _index = 0;
-                      
+                //       if (selectedSeed == 'Grams') {
+                //   flareFileDirectory = 'images/Exp1gram.flr';
+                // } else if (selectedSeed == 'Moong') {
+                //   flareFileDirectory = 'images/Exp1moong.flr';
+                // }
+                //       _index = 0;
+                      Navigator.pop(context);
                     });
                   }
                 });
